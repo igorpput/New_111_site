@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+    <title>Strefa Kadry 111 PDH</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    
+    <style>
+        /* Stylizacja okienka logowania */
+        #login-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            display: flex; flex-direction: column;
+            justify-content: center; align-items: center;
+            z-index: 100;
+            background: transparent; /* Tło strony będzie widoczne pod spodem */
+        }
+        
+        #login-box {
+            background: rgba(24, 38, 89, 0.95); /* Granat drużyny */
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: center;
+            max-width: 90%;
+            width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* Ukrywamy treść właściwą na start */
+        #secure-content {
+            display: none; /* To jest kluczowe - treść jest ukryta */
+        }
+
+        input.password-input {
+            background: rgba(0,0,0,0.3) !important;
+            border: 1px solid rgba(255,255,255,0.3) !important;
+            color: white !important;
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        
+        /* Tło wymuszone dla podstrony */
+        #bg {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/bg.jpg') !important;
+            background-size: cover;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100vh; z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="login-screen">
+        <div id="login-box">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem;">Strefa Kadry</h2>
+            <p>Wpisz hasło dostępu:</p>
+            
+            <form onsubmit="checkPassword(event)">
+                <input type="password" id="passInput" class="password-input" placeholder="Hasło..." required />
+                <button type="submit" class="button primary fit">Wejdź</button>
+            </form>
+            
+            <p id="error-msg" style="color: #ff6b6b; font-size: 0.8rem; margin-top: 10px; display: none;">Błędne hasło!</p>
+        </div>
+    </div>
+
+    <div id="secure-content">
+        <div id="wrapper">
+            <header id="header">
+                <div class="content">
+                    <div class="inner">
+                        <h1>Panel Zastępowego</h1>
+                        <p>Materiały wewnętrzne 111 PDH "Kamyk"</p>
+                    </div>
+                </div>
+                
+                <nav>
+                    <ul>
+                        <li><a href="konspekty.pdf">testPDF</a></li>
+                        <li><a href="punktacja.xlsx">Biwak</a></li>
+                        
+                        <li><a href="/">Wróć na stronę główną</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <footer id="footer">
+                <p class="copyright">&copy; 111 PDH "Kamyk". Tylko do użytku służbowego.</p>
+            </footer>
+        </div>
+    </div>
+
+    <div id="bg"></div>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        function checkPassword(event) {
+            event.preventDefault(); // Żeby strona się nie przeładowała
+            
+            var input = document.getElementById('passInput').value;
+            var errorMsg = document.getElementById('error-msg');
+            var loginScreen = document.getElementById('login-screen');
+            var content = document.getElementById('secure-content');
+
+            // --- TU USTAW SWOJE HASŁO ---
+            var tajneHaslo = "Czuwaj111"; 
+            // ----------------------------
+
+            if (input === tajneHaslo) {
+                // Jeśli hasło dobre:
+                loginScreen.style.display = 'none'; // Ukryj logowanie
+                content.style.display = 'block';    // Pokaż treść
+                
+                // Uruchom animację wejścia (żeby ładnie wyglądało)
+                document.body.classList.remove('is-preload');
+            } else {
+                // Jeśli hasło złe:
+                errorMsg.style.display = 'block';
+                document.getElementById('passInput').value = ''; // Wyczyść pole
+            }
+        }
+    </script>
+
+</body>
+</html>

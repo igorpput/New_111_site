@@ -1,0 +1,108 @@
+.custom-discord-widget {
+    background-color: #2b2d31;
+    border-radius: 8px;
+    width: 100%;
+    max-width: none; /* Usunięto sztywny limit 350px */
+    box-sizing: border-box; /* Ochrona przed rozpychaniem przez wewnętrzne marginesy */
+    margin: 0 0 2em 0; /* Zmieniono marginesy - centrowanie 'auto' nie jest już potrzebne przy 100% szerokości */
+    color: #dbdee1;
+    font-family: 'Source Sans Pro', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    text-align: left;
+}
+.cdw-header {
+    background-color: #5865F2;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+}
+.cdw-logo {
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.cdw-online-count {
+    font-size: 0.9em;
+}
+.cdw-body {
+    padding: 16px;
+    background-color: #2b2d31;
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.cdw-title {
+    font-size: 0.75em;
+    font-weight: 700;
+    color: #b5bac1;
+    margin-bottom: 12px;
+}
+.cdw-member-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.cdw-member-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 12px;
+}
+.cdw-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    position: relative;
+    background-color: #1e1f22;
+}
+.cdw-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.cdw-status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    border: 2px solid #2b2d31;
+}
+.cdw-status.online { background-color: #23a559; }
+.cdw-status.idle { background-color: #f0b232; }
+.cdw-status.dnd { background-color: #da373c; }
+.cdw-name {
+    font-size: 0.95em;
+    font-weight: 500;
+}
+.cdw-footer {
+    background-color: #232428;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cdw-footer-text {
+    font-size: 0.75em;
+    color: #b5bac1;
+}
+.cdw-btn {
+    background-color: #313338;
+    color: white !important;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+    border: none;
+    border-bottom: 0 !important;
+}
+.cdw-btn:hover {
+    background-color: #404249;
+}
