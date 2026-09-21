@@ -16,6 +16,10 @@ export default function StrefaRodzica() {
 
   return (
     <article id="rodzice">
+      <Link to="/" className="custom-back-btn">
+        <i className="fa-solid fa-arrow-left"></i>
+      </Link>
+
       <h2 className="major">Strefa Rodzica</h2>
       
       <h3>Formularz do wypełnienia</h3>

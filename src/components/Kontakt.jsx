@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 export default function Kontakt() {
   const [isSubmitting, setIsSubmitting] = useState(false);
     const navigate = useNavigate(); // 2. Zainicjalizuj hooka
@@ -37,6 +39,10 @@ export default function Kontakt() {
 
   return (
     <article id="contact">
+      <Link to="/" className="custom-back-btn">
+        <i className="fa-solid fa-arrow-left"></i>
+      </Link>
+
       <h2 className="major">Kontakt</h2>
       <h3>Wypełnij formularz kontaktowy</h3>
       

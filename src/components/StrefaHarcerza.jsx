@@ -1,16 +1,21 @@
 import React from 'react';
 import DiscordWidget from './DiscordWidget';
 import { Link } from 'react-router-dom';
+import RankingTop3 from './RankingTop3';
 
 export default function StrefaHarcerza() {
   return (
     <article id="harcerz">
+      <Link to="/" className="custom-back-btn">
+          <i className="fa-solid fa-arrow-left"></i>
+      </Link>
       <h2 className="major">Strefa Harcerza</h2>
 
       <h3><i className="fa-solid fa-trophy"></i> Rankingi Punktowe </h3>
       <div className="ranking-container" style={{ marginTop: '2rem', width: '100%' }}>
         <div id="ranking-list" className="ranking-list">
         </div>
+      <RankingTop3/>
         <div className="action-buttons-row">
           <Link to="/questy" className="button primary">
             <i className="fa-solid fa-envelopes-bulk"></i>&nbsp; Przeglądaj zadania <i className="fa-solid fa-envelopes-bulk"></i>

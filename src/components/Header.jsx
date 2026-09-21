@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header id="header">
       <div className="logo">
-        <img src="images/LOGO111WHITE.png" alt="Logo 111 PDH" className="custom-logo" />
+        <img src="/images/LOGO111WHITE.png?v=1" alt="Logo 111 PDH" className="custom-logo" />
       </div>
 
       <div className="content">

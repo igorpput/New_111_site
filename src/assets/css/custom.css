@@ -1,4 +1,10 @@
-
+#root {
+    width: 100%;
+    height: 100%;
+    display: contents;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /* 1. ŻÓŁTY SUWAK (GÓRA I DÓŁ EKRANU) */
@@ -164,7 +170,7 @@ body:after, body:before,
 
 #bg {
     /* --- POPRAWIONA ŚCIEŻKA DO TŁA (../.. wychodzi z assets/css do głównego folderu) --- */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/bgSMALL.jpg') !important;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/images/bgSMALL.jpg?v=1') !important;
     
     background-size: cover !important;
     background-position: center !important;
@@ -1014,4 +1020,35 @@ html {
     margin-top: 20px;
     flex-wrap: wrap;                /* Zabezpieczenie na telefony */
     gap: 15px;                      /* Odstęp, gdyby na małym ekranie spadły pod siebie */
+}
+
+/* Wymuszenie widoczności wyrenderowanego artykułu w React Routerze */
+#main > article {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Całkowite wyrzucenie logo i stopki z przepływu dokumentu, gdy artykuł jest otwarty */
+body.is-article-visible #header,
+body.is-article-visible #footer {
+    display: none !important;
+}
+
+/* Wyrównanie zawartości sekcji Kontakt do lewej */
+#contact {
+    text-align: left !important;
+}
+
+#contact label,
+#contact h3,
+#contact .contact-email,
+#contact .icons {
+    text-align: left !important;
+}
+
+
+/* Wymuszenie oryginalnego wyrównania wewnątrz artykułów */
+#main > article {
+    text-align: left !important;
 }

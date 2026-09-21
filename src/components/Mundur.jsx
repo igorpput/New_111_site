@@ -14,11 +14,11 @@ export default function Mundur() {
             <i className="fa-solid fa-shirt"></i>&nbsp; Gdzie zakupić mundur?
           </a>
         </li>
-        <li>
+        {/*<li>
           <a href="https://www.wgl.pl/category/skladnica-harcerska-umundurowanie-mundur-harcerski?filter=1" target="_blank" rel="noreferrer" className="button fit">
             <i className="fa-solid fa-shirt"></i>&nbsp; Gdzie zakupić mundur?
           </a>
-        </li>
+        </li>*/}
       </ul>
     </article>
   );
