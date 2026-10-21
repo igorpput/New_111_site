@@ -10,11 +10,13 @@ export default function StrefaHarcerza() {
           <i className="fa-solid fa-arrow-left"></i>
       </Link>
       <h2 className="major">Strefa Harcerza</h2>
-
+{/*
       <h3><i className="fa-solid fa-trophy"></i> Rankingi Punktowe </h3>
-      <div className="ranking-container" style={{ marginTop: '2rem', width: '100%' }}>
+       className="ranking-container" style={{ marginTop: '2rem', width: '100%' }}
         <div id="ranking-list" className="ranking-list">
         </div>
+      
+      <div
       <RankingTop3/>
         <div className="action-buttons-row">
           <Link to="/questy" className="button primary">
@@ -24,7 +26,39 @@ export default function StrefaHarcerza() {
             Pokaż cały ranking
           </Link>
         </div>
-      </div>
+      </div>*/}
+
+      {/* Kontener nawigacji pod rankingiem Top 3 */}
+        <div 
+          className="actions-container" 
+          style={{ 
+            display: 'flex', 
+            flexDirection: 'column', 
+            gap: '15px', 
+            marginTop: '25px' 
+          }}
+        >
+          {/* Pierwszy wiersz: Zadania (lewo) i Sklep (prawo) */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
+            <Link to="/zadania" className="button primary" style={{ width: '100%', textAlign: 'center' }}>
+              <i className="fa-solid fa-envelope-open-text" style={{ marginRight: '10px' }}></i> 
+              PRZEGLĄDAJ ZADANIA
+            </Link>
+            
+            <Link to="/sklep" className="button primary" style={{ width: '100%', textAlign: 'center', backgroundColor: '#fff', color: '#1a1f36' }}>
+              <i className="fa-solid fa-store" style={{ marginRight: '10px' }}></i> 
+              SKLEP ZA KAMYKI
+            </Link>
+          </div>
+
+          {/* Drugi wiersz: Pełny ranking (wyrównany do prawej pod sklepem) */}
+          <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {/* width: calc(50% - 7.5px) precyzyjnie odejmuje połowę gapu z grida wyżej, zachowując idealną pionową linię */}
+            <Link to="/pelny-ranking" className="button" style={{ width: 'calc(50% - 7.5px)', textAlign: 'center' }}>
+              POKAŻ CAŁY RANKING
+            </Link>
+          </div>
+        </div>
       
       <hr />
 

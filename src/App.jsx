@@ -15,6 +15,7 @@ import Mundur from './components/Mundur';
 import ContactThanks from './components/ContactThanks';
 import Soon from './components/Soon';
 import Footer from './components/Footer';
+import Sklep from './components/Sklep';
 
 // Wewnętrzny komponent zarządzający stanem widoku
 function AplikacjaGlowna() {
@@ -48,11 +49,13 @@ function AplikacjaGlowna() {
           <Route path="/rodzice" element={<StrefaRodzica />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/pelny-ranking" element={<PelnyRanking />} />
+          <Route path="/sklep" element={<Sklep />} />
           <Route path="/questy" element={<Questy />} />
           <Route path="/skladki" element={<Skladki />} />
           <Route path="/mundur" element={<Mundur />} />
           <Route path="/contact_thanks" element={<ContactThanks />} />
           <Route path="/soon" element={<Soon />} />
+          
         </Routes>
         
         {/* Generowanie oryginalnego przycisku krzyżyka do zamykania artykułu */}
